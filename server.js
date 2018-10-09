@@ -50,7 +50,7 @@ db.once("open", function() {
 app.use(logger('combined'));
 logger('combined', {buffer: true});
 
-request("http://www.dailykos.com", function(error, response, html) {
+request("http://www.cnn.com", function(error, response, html) {
 
   var $ = cheerio.load(html);
 
@@ -66,7 +66,7 @@ request("http://www.dailykos.com", function(error, response, html) {
     var newArticle = new Article({
     	title: storyTitle,
      	date: storyDate,
-     	link: "http://www.dailykos.com" + storyLink,
+     	link: "http://www.cnn.com" + storyLink,
      	story: para1
     });
 
